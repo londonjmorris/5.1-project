@@ -4,10 +4,12 @@ const express = require('express');
 
 const app = express();
 
+var output = loremIpsum({
+  count:3, units:'paragraphs'
+});
+
 app.get('/lorem', function(req, res){
-  res.send(output = loremIpsum({
-    count:3, units:'paragraphs'
-  }));
+  res.send(output);
 });
 
 
